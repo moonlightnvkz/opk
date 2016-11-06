@@ -378,21 +378,11 @@ static AVLTreeNode *rotate(AVLTreeNode *b, RotationType type)
     return a;
 }
 
-static AVLTreeNode *do_rotate(AVLTreeNode *b, RotationType type)
-{
-    return rotate(b, type);
-}
-
-static AVLTreeNode *do_another_rotate(AVLTreeNode *b, RotationType type)
-{
-    return rotate(b, type == LEFT ? RIGHT : LEFT);
-}
-
 static AVLTreeNode *big_rotate(AVLTreeNode *node, RotationType type)
 {
     AVLTreeNode **child = get_child_p(node, type);
-    *child = do_another_rotate(*child, type);
-    return do_rotate(node, type);
+    *child = rotate(*child, type == LEFT ? RIGHT : LEFT);
+    return rotate(node, type);
 }
 
 static bool is_balanced(AVLTreeNode *node)
