@@ -11,7 +11,6 @@ typedef struct tStack {
     size_t allocated;
     size_t increment;
     size_t initialSize;
-    int isTuned;
 } Stack;
 
 /* Создать пустой стек */
