@@ -104,7 +104,7 @@ Pointer avl_find(AVLTree *tree, Pointer data)
 static AVLTreeNode *insert_node(AVLTreeNode *node,
                                 Pointer data,
                                 int (*cmp)(Pointer, Pointer),
-                                AVLTreeNode **replaced)
+                                Pointer *replaced)
 {
     assert(cmp != NULL);
     if (node == NULL) {
@@ -127,7 +127,7 @@ static AVLTreeNode *insert_node(AVLTreeNode *node,
 Pointer avl_insert(AVLTree *tree, Pointer data)
 {
     assert(tree != NULL);
-    AVLTreeNode *replaced = NULL;
+    Pointer replaced = NULL;
     tree->root = insert_node(tree->root,
                              data,
                              tree->cmp_func,
