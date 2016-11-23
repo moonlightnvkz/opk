@@ -11,9 +11,6 @@
 #define Pack 'p'
 #define Unpack 'u'
 
-//D:\\C\\Huffman\\Huffman3\\output
-//D:\\C\\Huffman\\Huffman3\\textDecode.txt
-
 void init(char InputPath[PATH_MAX], char OutputPath[PATH_MAX], char Mode[ModeLenght])
 {
     printf(HELP);
