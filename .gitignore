@@ -1,3 +1,5 @@
 # QT Creator project files
 *.pro
 *.pro.user
+
+*.ignore
