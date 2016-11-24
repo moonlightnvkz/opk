@@ -3,3 +3,9 @@
 *.pro.user
 
 *.ignore
+
+# CLion project files
+cmake-build-debug/
+cmake_modules/
+.idea/
+CMakeLists.txt
