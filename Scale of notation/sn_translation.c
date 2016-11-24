@@ -3,7 +3,6 @@
 //
 
 #include <stdio.h>
-//#include <string.h>
 #include <assert.h>
 #include "sn_translation.h"
 
