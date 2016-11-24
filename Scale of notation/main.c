@@ -25,11 +25,18 @@ int main() {
         printf("Wrong input. Try again...\n>");
         scanf("%c", (char*)&base_to);
     }
-
+    // Read '\n' from stdin
     char c = (char)getchar();
 
     int *number = malloc(sizeof(int) * size);
+    if (number == NULL) {
+        fprintf(stderr, "Failed to allocate memory for number:%s:%s:%d", __FILE__, __FUNCTION__, __LINE);
+        exit(1);
+    }
+    
     printf("Enter the number:\n>");
+    
+    // Reading the number from the console
     for (unsigned i = 0; i < size; ++i) {
         if (scanf("%c", &c) != 1) {
             fprintf(stderr, "Wrong input:%s:%s:%d", __FILE__, __FUNCTION__, __LINE__);
@@ -41,7 +48,8 @@ int main() {
         }
         number[i] = (int) (c - '0');
     }
-
+    
+    // length of the output number (after each function)
     size_t length;
     int *dec = sn_translate_to_dec(number, size, base_from, &length);
     int *out = sn_translate_from_dec(dec, length, base_to, &length);
