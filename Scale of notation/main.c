@@ -30,7 +30,7 @@ int main() {
 
     int *number = malloc(sizeof(int) * size);
     if (number == NULL) {
-        fprintf(stderr, "Failed to allocate memory for number:%s:%s:%d", __FILE__, __FUNCTION__, __LINE);
+        fprintf(stderr, "Failed to allocate memory for number:%s:%s:%d", __FILE__, __FUNCTION__, __LINE__);
         exit(1);
     }
     
